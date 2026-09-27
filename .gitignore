@@ -44,6 +44,9 @@ fastlane/test_output/
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+*.p12
 
 # OS
 .DS_Store
