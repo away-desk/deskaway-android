@@ -1,0 +1,50 @@
+# Gradle / build output
+.gradle/
+build/
+captures/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# Local machine config (contains the local SDK path)
+local.properties
+
+# Signing material — never commit
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+release.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.navigation/
+misc.xml
+
+# NDK / native
+obj/
+
+# Lint / test / coverage output
+lint-results*.html
+lint-results*.xml
+reports/
+test-results/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
