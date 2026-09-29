@@ -87,6 +87,26 @@ today — they are agreed module boundaries with no Gradle module yet.
   app is killed between tapping approve and the relay acknowledging it.
 - Never commit a keystore or signing properties; `.gitignore` blocks them.
 
+## Rule: UI colours and font
+
+Every screen and notification follows `../color-theme.md` (in the `DeskAway`
+folder that holds all the repos). It is the only reference for colour.
+
+- Declare its values once in the `core/design` Compose theme (dark and light
+  colour schemes) and read them from `MaterialTheme`/theme tokens. Never write
+  a `Color(0x...)` literal in a feature module.
+- Dynamic colour (wallpaper-based Material You) stays **off**, so a red
+  "irreversible" card is always red.
+- Dark is the main theme; light follows the system setting.
+- Green, amber and red are status colours only — done, partial, irreversible.
+  Never on buttons, links or decoration, and always shown with a word or icon.
+- The typeface is **Wallpoet**, bundled in `core/design` resources (never
+  downloaded at run time) and exposed through the theme's `Typography`. Use it
+  for headings, labels, buttons and numbers; long text and command output use
+  the system sans and monospace fonts for readability.
+- Sizes are relative: `sp` for text, `dp` for layout, from shared theme
+  dimensions — never raw pixels — so user font scaling keeps working.
+
 ## Rule: keep README.md current
 
 The README is the one file a newcomer is guaranteed to read. Revisit it
